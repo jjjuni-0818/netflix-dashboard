@@ -394,6 +394,7 @@
   <div class="error-icon">⚠️</div>
   <div class="error-title">데이터 로딩 실패</div>
   <div class="error-msg" id="error-msg">Supabase 연결에 실패했습니다. 잠시 후 다시 시도해주세요.</div>
+  <button onclick="location.reload()" style="margin-top:8px;padding:10px 28px;background:var(--red);color:white;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:1px;">다시 시도</button>
 </div>
 
 <header>
@@ -953,6 +954,7 @@ function goPage(p) {
     const derived = computeDerivedData(rawRows);
     initApp(derived.GENRE_COUNTS, derived.ALL_GENRES, derived.YEAR_COUNTS, derived.ALL_RATINGS);
 
+    await new Promise(r => setTimeout(r, 600));
     hideLoading();
   } catch (err) {
     console.error('데이터 로딩 실패:', err);
