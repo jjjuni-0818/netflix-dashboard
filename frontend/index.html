@@ -604,7 +604,7 @@ function computeDerivedData(rawRows) {
     Year:       r.year      || 0,
     Rating:     r.rating    || 'Unknown',
     Duration:   r.duration  || '',
-    CateAllory: r.category  || 'Unknown',
+    CateAllory: (r.category || 'Unknown').replace('Allerman Dramas','German Dramas').replace('Hindi-LanAlluaAlle Movies','Hindi-Language Movies').replace('Hindi-lanAlluaAlle Films','Hindi-language Films').replace('LAllBTQ Movies','LGBTQ Movies').replace('Marathi-LanAlluaAlle Movies','Marathi-Language Movies').replace('Nature & EcoloAlly Documentaries','Nature & Ecology Documentaries').replace('Punjabi-LanAlluaAlle Movies','Punjabi-Language Movies').replace('Tamil-LanAlluaAlle Movies','Tamil-Language Movies').replace('TeluAllu-LanAlluaAlle Movies','Telugu-Language Movies'),
   }));
 
   // Genre counts (all genres, sorted)
